@@ -1,0 +1,49 @@
+.CoinFlipWrapper {
+    position: relative;
+
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    overflow: hidden;
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+}
+
+/* .CoinFlipWrapper:hover > .CoinToFlip { */
+.CoinToFlip {
+    position: absolute;
+    /* background-color: red; */
+
+    /* transform-origin: 75px 75px; */
+    
+    /* transform: translateY(-370px); */
+    
+    left: 0;
+    
+    /* top: 0;
+    transform-origin: 75px 75px; */
+    
+    /* top: -150px; */
+    /* transform-origin: 75px 225px; */
+}
+
+.CoinToFlip.CoinFlipping {
+    /* animation-iteration-count: 5; */
+    /* animation-iteration-count: infinite; */
+    animation-name: flip;
+    /* animation-duration: 800ms; */
+    animation-timing-function: linear;
+}
+
+@keyframes flip {
+    0% {
+        /* transform: translateY(0); */
+        transform: rotate(0deg);
+        /* transform-origin: 75px 75px; */
+        /* transform-origin: top left; */
+    }
+    100% {
+        transform: rotate(360deg);
+        /* transform-origin: 75px 75px; */
+        /* transform: translateY(-100%); */
+    }
+}

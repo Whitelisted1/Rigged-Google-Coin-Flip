@@ -1,0 +1,20 @@
+{
+   "name": "Rigged Google Coin Flip",
+   "description": "Allows you to rig Google's Coin flip",
+   "version": "0.0.1",
+   "manifest_version": 2,
+
+   "permissions": [
+      "activeTab",
+      "storage"
+   ],
+   
+   "content_scripts": [
+      {
+         "js": [ "coin_flip.js" ],
+         "css": [ "coin_flip.css" ],
+         "matches": [ "*://*.google.com/*" ],
+         "run_at": "document_end"
+      }
+   ]
+}
