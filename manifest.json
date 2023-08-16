@@ -2,12 +2,16 @@
    "name": "Rigged Google Coin Flip",
    "description": "Allows you to rig Google's Coin flip",
    "version": "0.0.1",
-   "manifest_version": 2,
+   "manifest_version": 3,
 
    "permissions": [
       "activeTab",
       "storage"
    ],
+
+   "action": {
+      "default_popup": "./options/index.html"
+    },
    
    "content_scripts": [
       {
