@@ -42,6 +42,7 @@ const settingsDefaultValues = [
 let fakeCoin;
 let newStartButton;
 let settings;
+let currentlyFlippedAtIndex = 0;
 let flipping = false;
 
 async function flipCoin() {
@@ -132,10 +133,9 @@ async function flipCoin() {
     
     fakeCoin.classList.add("CoinFlipping");
 
+    i = currentlyFlippedAtIndex-1;
     targetUnix = Date.now() + (numRotations * timeForCoinToRotate);
-    i = -1;
-    numFlips = 0;
-    timesToRotate = (numRotations * numSides * 2) + targetIndex + 2;
+    timesToRotate = (numRotations * numSides * 2) + targetIndex - currentlyFlippedAtIndex + 2;
 
     // Flip the coin
     while (true) {
@@ -143,9 +143,6 @@ async function flipCoin() {
         if (timesToRotate == 0) break;
 
         i = ( (i+1) % (numSides) )
-        if (i == 0) {
-            numFlips++;
-        }
         
         fakeCoin.style.transformOrigin = "50% " + ((150 * i) + 75) + "px";
         fakeCoin.style.top = "-" + 150 * i + "px";
@@ -153,6 +150,7 @@ async function flipCoin() {
         await delay( ((targetUnix - Date.now()) / timesToRotate) - 0 );
     }
 
+    currentlyFlippedAtIndex = targetIndex;
     fakeCoin.classList.remove("CoinFlipping");
 
     await delay(100);
