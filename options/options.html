@@ -3,7 +3,8 @@
     <head>
         <title>Rigged Google Coin Flip</title>
 
-        <link rel="stylesheet" href="options.css">
+        <link rel="stylesheet" href="options.css" type="text/css">
+        <link rel="stylesheet" href="toggleswitch.css" type="text/css">
     </head>
     <body>
         <div id="wrapper">
@@ -24,19 +25,26 @@
                 
                 <br><br>
 
-                <span class="tooltip">
-                    <span>Coin land on heads side</span>
-                    <input id="targetHeads" type="checkbox">
-    
-                    <span class="tooltipText">
-                        If checked the coin will land on heads. If unchecked the coin will land on tails.
-                        <br>
-                        (Take effect without page reload)
-                    </span>
+                
+                <table style="margin-right: auto; margin-left: auto;">
+                    <tr>
+                        <td style="padding-right: 10px;">
+                            Tails
+                        </td>
+                        <td>
+                            <label class="switch">
+                                <input id="targetHeads" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                        <td style="padding-left: 10px;">
+                            Heads
+                        </td>
+                    </tr>
+                </table>
                     
-                </span>
 
-                <br><br><br>
+                <br><br>
 
                 <button id="resetSettings">Reset Settings</button>
             </fieldset>
