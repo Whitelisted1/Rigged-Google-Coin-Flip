@@ -8,6 +8,8 @@ Allows you to set the outcome of [Google's Coin Flip tool](https://www.google.co
 * [ ] Clean up code
     * [ ] Add comments
 * [X] Make the flipping animation for tails side transition better
+* [ ] Add an install guide
+* [ ] Add a "This tool in action" video
 
 ## Install guide
 1. Download the GitHub repo by clicking the green "Code" button and clicking "Download ZIP"
