@@ -1,0 +1,139 @@
+:root {
+    width: 500px;
+    min-height: 500px;
+
+    --background-color: rgb(36,36,36);
+    --tooltip-color: rgb(200, 200, 200);
+    --tooltip-text-color: black;
+}
+
+html {
+    font-size: 18px;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; */
+    /* font-family: "Segoe UI"; */
+    overflow-x: hidden;
+}
+
+html, input, button {
+    background-color: var(--background-color);
+    color: white;
+}
+
+#starSuggestion {
+    position: absolute;
+    
+    width: 350px;
+
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    font-size: .7rem;
+    color: gray;
+}
+
+#wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500px;
+    min-height: 500px;
+
+    padding-top: 20px;
+    /* border: 1px solid white; */
+    outline: 1px solid white;
+
+    text-align: center;
+}
+
+fieldset, hr {
+    padding: 20px;
+    /* padding-bottom: 60px; */
+    margin: 10px;
+    /* border: 1px dashed rgb(86, 86, 86); */
+    border: none;
+    border-top: 1px dashed rgb(54, 54, 54);
+    border-bottom: 1px dashed rgb(54, 54, 54);
+
+    transition: border-bottom 1s;
+}
+
+legend {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.withSubTitle {
+    margin-bottom: 0;
+}
+
+.subTitle {
+    color: gray;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltipText {
+    position: absolute;
+    
+    width: calc(110% - 35px); /* Width - padding */
+    
+    z-index: 10;
+
+    background-color: rgb(50, 50, 50);
+    border: solid rgb(50, 50, 50);
+    color: white;
+    border-radius: .5em;
+    opacity: 0;
+    
+    padding: 15px;
+
+    left: -5%;
+    top: calc(100% + 10px);
+    transform: translateX(12.5%);
+    
+    transition: opacity 300ms, transform 700ms;
+    transition-delay: 100ms;
+
+    pointer-events: none;
+}
+
+code {
+    background-color: rgb(60,66,76);
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    font-size: .8rem;
+}
+
+.tooltip:hover > .tooltipText {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+fieldset:has(> .tooltip:hover) {
+    border-bottom: 1px dashed rgba(54, 54, 54, .35);
+}
+
+#buttons {
+    position: absolute;
+    bottom: 5px;
+}
+
+#updateText {
+    position: absolute;
+    
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
