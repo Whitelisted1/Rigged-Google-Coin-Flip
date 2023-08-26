@@ -169,8 +169,11 @@ async function flipCoin() {
 }
 
 (async() => {
-    settings = await getSettings();
+    if (document.querySelector('canvas[jsname="UzWXSb"]') == undefined) {
+        return;
+    }
 
+    settings = await getSettings();
     if (!settings.extensionEnabled) {
         return;
     }
