@@ -122,17 +122,10 @@ async function fetchAndDisplaySettings() {
 }
 
 window.addEventListener("load", async () => {
-    console.log(await getData("extensionEnabled"));
-    console.log(await getMultipleDataValues(["extensionEnabled", "targetHeads"]));
-
     document.getElementById("resetSettings").addEventListener("click", () => {
         chrome.storage.local.clear();
         fetchAndDisplaySettings();
     });
-
-    // document.getElementById("applySettings").addEventListener("click", () => {
-    //     saveSettings();
-    // });
 
     await fetchAndDisplaySettings();
     shouldUpdate();

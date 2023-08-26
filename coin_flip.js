@@ -7,7 +7,6 @@ async function storeData(key, value){ await chrome.storage.local.set({[key]: val
 async function getMultipleDataValues(keys){ return new Promise(resolve => { chrome.storage.local.get(keys, function (data) { resolve(data); }); }) }
 async function storeMultipleDataValues(keys){ await chrome.storage.local.set(keys); }
 
-
 // Get local settings
 async function getSettings() {
     settings = await getMultipleDataValues(settingsKeys);
@@ -63,8 +62,6 @@ async function flipCoin() {
     }
     
     const numRotations = getRandomInt(1, 3);
-    // const timeForCoinToRotate = getRandomInt(1250, 1500); // 1250
-    // const timeForCoinToRotate = 2500;
     const timeForCoinToRotate = 2500 / numRotations;
     
     const headsLabel = document.querySelector('div[jsname="DyVWtc"]');
@@ -75,6 +72,7 @@ async function flipCoin() {
     headsLabel.style.transition = "opacity 1s";
     tailsLabel.style.transition = "opacity 1s";
 
+    // Create the fake coin and the "flipping" text
     if (fakeCoin == undefined) {
         coinFlipCanvas = document.querySelector('canvas[jsname="UzWXSb"]');
         coinFlipSheet = document.querySelector('img[jsname="gtVczb"]');
@@ -87,13 +85,9 @@ async function flipCoin() {
         
         coinFlipSheet.remove();
 
-        // while (startButtonParent.firstChild) {
-            // startButtonParent.removeChild(startButtonParent.lastChild);
-            // startButtonParent
-        // }
-        for (child of startButtonParent.children) {
-            console.log(child);
-            child.style.display = "none";
+        while (startButtonParent.firstChild) {
+            startButtonParent.removeChild(startButtonParent.lastChild);
+            startButtonParent
         }
 
         newStartButton = document.createElement("button");
@@ -142,32 +136,20 @@ async function flipCoin() {
     i = -1;
     numFlips = 0;
     timesToRotate = (numRotations * numSides * 2) + targetIndex + 2;
-    // timesToRotate = 100
-    console.log(timesToRotate);
+
+    // Flip the coin
     while (true) {
         timesToRotate--;
         if (timesToRotate == 0) break;
 
-        // i++;
-        // i = (i % numSides)+1
         i = ( (i+1) % (numSides) )
         if (i == 0) {
             numFlips++;
         }
         
         fakeCoin.style.transformOrigin = "50% " + ((150 * i) + 75) + "px";
-        // fakeCoin.style.transformOrigin = (150 * i) + 75 + "px 50%";
         fakeCoin.style.top = "-" + 150 * i + "px";
-        
-        // fakeCoin.style.transformOrigin = "75px 225px";
-        // fakeCoin.style.top = "-150px";
-        
-        // fakeCoin.style.transform = "translateY(-" + 150 * i + "px)"
-        // if (i == targetIndex && animationEnded) {
-        //     console.log(i, numFlips)
-        //     // clearInterval(interval);
-        //     break;
-        // }
+
         await delay( ((targetUnix - Date.now()) / timesToRotate) - 0 );
     }
 
@@ -185,13 +167,8 @@ async function flipCoin() {
     newStartButton.style.cursor = "pointer";
     newStartButton.animate([{ "opacity": "0" }, { "opacity": "1" }], {"duration": 500});
 
-    // if (targetIndex == tailsIndex) answerText.innerText = "Tails"
-    // else answerText.innerText = "Heads";
-
     flipping = false;
 }
-
-// document.querySelector('canvas[jsname="UzWXSb"]').style.opacity = 0;
 
 (async() => {
     settings = await getSettings();
