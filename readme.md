@@ -8,7 +8,6 @@ Allows you to set the outcome of [Google's Coin Flip tool](https://www.google.co
 * [ ] Clean up code
     * [ ] Add comments
 * [X] Make the flipping animation for tails side transition better
-* [ ] Add an install guide
 * [X] Add a "This tool in action" video
 
 ## Install guide
