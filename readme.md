@@ -2,14 +2,14 @@
 Allows you to set the outcome of [Google's Coin Flip tool](https://www.google.com/search?q=google%20coin%20flip)
 
 ## This tool in action
-<i>currently unavailable</i>
+<img src="assets/examples/Rigged_Flips.gif" width="580px">
 
 ## Todo
 * [ ] Clean up code
     * [ ] Add comments
 * [X] Make the flipping animation for tails side transition better
 * [ ] Add an install guide
-* [ ] Add a "This tool in action" video
+* [X] Add a "This tool in action" video
 
 ## Install guide
 1. Download the GitHub repo by clicking the green "Code" button and clicking "Download ZIP"
