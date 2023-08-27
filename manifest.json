@@ -1,7 +1,7 @@
 {
    "name": "Rigged Google Coin Flip",
    "description": "Allows you to rig Google's Coin flip",
-   "version": "0.0.4",
+   "version": "0.0.5",
    "manifest_version": 3,
 
    "permissions": [

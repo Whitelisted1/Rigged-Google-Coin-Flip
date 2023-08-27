@@ -1,29 +1,31 @@
+// Store and get local extension data
 async function getData(key){ return Object.values(await chrome.storage.local.get(key))[0]; }
 async function storeData(key, value){ await chrome.storage.local.set({[key]: value}); }
 
 async function getMultipleDataValues(keys){ return await chrome.storage.local.get(keys); }
 async function storeMultipleDataValues(keys){ await chrome.storage.local.set(keys); }
 
+
+// Information for the specific extension options
 const STRING_TYPE = 0;
 const INTEGER_TYPE = 1;
 const BOOL_TYPE = 2;
 const ARRAY_TYPE = 3;
-
 const settingsKeys = [
     'extensionEnabled',
     'targetHeads'
 ];
-
 const settingsDefaultValues = [
     true,
     true
 ];
-
 const settingsKeyTypes = [
     BOOL_TYPE,
     BOOL_TYPE
 ];
 
+// Check to see if there is an update on the Github page
+// Store the result in a cache for 24 hours
 async function shouldUpdate() {
     onlineVersionData = await getData("onlineVersion");
     if (onlineVersionData == undefined || (onlineVersionData.expiresAt - Date.now() < 0)) {
@@ -61,6 +63,7 @@ async function shouldUpdate() {
     }
 }
 
+// Save the settings from the values of the inputs on the page
 async function saveSettings() {
     storedSettingsValues = { };
 
@@ -82,6 +85,7 @@ async function saveSettings() {
     await storeMultipleDataValues(storedSettingsValues);
 }
 
+// Fetch the information of the specific settings and display them on the page
 async function fetchAndDisplaySettings() {
     const settingsValues = await getMultipleDataValues(settingsKeys);
 

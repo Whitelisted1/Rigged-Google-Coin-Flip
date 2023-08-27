@@ -5,8 +5,8 @@ Allows you to set the outcome of [Google's Coin Flip tool](https://www.google.co
 <img src="assets/examples/Rigged_Flips.gif" width="580px">
 
 ## Todo
-* [ ] Clean up code
-    * [ ] Add comments
+* [X] Clean up code
+    * [X] Add comments
 * [X] Make the flipping animation for tails side transition better
 * [X] Add a "This tool in action" video
 
