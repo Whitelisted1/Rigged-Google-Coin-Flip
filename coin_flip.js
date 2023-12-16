@@ -17,7 +17,8 @@ async function getSettings() {
         thisValue = settings[thisKey];
         if (thisValue == undefined) {
             settings[thisKey] = settingsDefaultValues[i];
-            await storeData(thisKey, thisValue);
+            await storeData(thisKey, settingsDefaultValues[i]);
+            console.log(thisKey, settingsDefaultValues[i]);
         }
     }
 
@@ -29,7 +30,6 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
-
 
 const settingsKeys = [
     'extensionEnabled',
@@ -97,7 +97,6 @@ async function flipCoin() {
         // Remove all children of the start button
         while (startButtonParent.firstChild) {
             startButtonParent.removeChild(startButtonParent.lastChild);
-            startButtonParent
         }
 
         // create the fake start button
