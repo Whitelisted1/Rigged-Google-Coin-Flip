@@ -1,7 +1,7 @@
 {
    "name": "Rigged Google Coin Flip",
    "description": "Allows you to rig Google's Coin flip",
-   "version": "0.0.5",
+   "version": "0.0.6",
    "manifest_version": 3,
 
    "permissions": [
@@ -17,7 +17,10 @@
       {
          "js": [ "coin_flip.js" ],
          "css": [ "coin_flip.css" ],
-         "matches": [ "*://*.google.com/*" ],
+         "matches": [
+            "*://*.google.com/*",
+            "*://*.google.co.uk/*"
+         ],
          "run_at": "document_end"
       }
    ]
