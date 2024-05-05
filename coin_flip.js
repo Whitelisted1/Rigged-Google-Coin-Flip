@@ -33,11 +33,13 @@ function getRandomInt(min, max) {
 
 const settingsKeys = [
     'extensionEnabled',
-    'targetHeads'
+    'targetHeads',
+    'hotkeysEnabled'
 ];
 const settingsDefaultValues = [
     true,
-    true
+    true,
+    true,
 ];
 
 let fakeCoin;
@@ -197,3 +199,18 @@ async function flipCoin() {
 
     await flipCoin();
 })();
+
+document.addEventListener("keypress", async (e) => {
+    if (await getData("hotkeysEnabled") != true) return;
+
+    switch (e.code) {
+        case "KeyT":
+            await storeData("targetHeads", false);
+            break;
+        case "KeyH":
+            await storeData("targetHeads", true);
+            break;
+        default:
+            return;
+    }
+});

@@ -13,13 +13,16 @@ const BOOL_TYPE = 2;
 const ARRAY_TYPE = 3;
 const settingsKeys = [
     'extensionEnabled',
-    'targetHeads'
+    'targetHeads',
+    'hotkeysEnabled'
 ];
 const settingsDefaultValues = [
     true,
-    true
+    true,
+    true,
 ];
 const settingsKeyTypes = [
+    BOOL_TYPE,
     BOOL_TYPE,
     BOOL_TYPE
 ];
