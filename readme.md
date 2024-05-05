@@ -10,6 +10,7 @@ Allows you to set the outcome of [Google's Coin Flip tool](https://www.google.co
 * [X] Make the flipping animation for tails side transition better
 * [X] Add a "This tool in action" video
 * [X] Add hotkeys to switch between targeting heads and tails (Press "H" or "T" keys on the Google Page)
+    * Thank you [5H2](https://github.com/5H2) for the suggestion
 
 ## Install guide
 1. Download the GitHub repo by clicking the green "Code" button and clicking "Download ZIP"
