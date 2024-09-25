@@ -73,8 +73,8 @@ async function flipCoin() {
     const timeForCoinToRotate = 2500 / numRotations;
     
     // Get the heads and tails label
-    const headsLabel = document.querySelector('div[jsname="DyVWtc"]');
-    const tailsLabel = document.querySelector('div[jsname="va93q"]');
+    const headsLabel = document.querySelector('h3[jsname="DyVWtc"]');
+    const tailsLabel = document.querySelector('h3[jsname="va93q"]');
 
     // Hide both the labels
     headsLabel.style.opacity = "0";
@@ -87,7 +87,7 @@ async function flipCoin() {
         // Get the original coin flip canvas and sheet
         coinFlipCanvas = document.querySelector('canvas[jsname="UzWXSb"]');
         coinFlipSheet = document.querySelector('img[jsname="gtVczb"]');
-        startButtonParent = document.querySelector('button[jsname="prQWAb"]').parentElement; // So we can create a fake start button
+        startButtonParent = document.querySelector('div[jsname="prQWAb"]').parentElement; // So we can create a fake start button
         
         if (coinFlipCanvas == undefined) {
             flipping = false;
